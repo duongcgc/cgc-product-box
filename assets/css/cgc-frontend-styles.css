@@ -1,0 +1,177 @@
+.col-left .ubp_box_content {
+  overflow: auto;
+}
+.col-left .ubp_box_content li {
+  background: transparent;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+}
+
+.cgc_layout_01 {
+  color: #333;
+}
+.cgc_layout_01 .col-left.ubp-column-4 ul li {
+  width: 18%;
+}
+.cgc_layout_01 .col-left .ubp_box_content {
+  height: 469px;
+  background-image: url("../images/layout-1.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 3px 0px;
+}
+.cgc_layout_01 .col-left .ubp_box_content li::before {
+  padding-top: 257%;
+}
+.cgc_layout_01 .col-left .ubp_box_content li:nth-child(2) {
+  width: 58%;
+}
+.cgc_layout_01 .col-left .ubp_box_content li:nth-child(2)::before {
+  padding-top: 56%;
+}
+.cgc_layout_01 .col-left .ubp_box_content li:first-child {
+  width: 30%;
+  height: 100%;
+}
+.cgc_layout_01 .col-left .ubp_box_content li:first-child::before {
+  padding-top: 269%;
+}
+
+.cgc_layout_02 {
+  color: #333;
+}
+.cgc_layout_02 .col-left .ubp_box_content {
+  height: 469px;
+  background-image: url("../images/layout-2.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: -10px -2px;
+}
+.cgc_layout_02 .col-left .ubp_box_content ul {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "ruou ruou ruou" "qua2 qua3 qua4";
+}
+.cgc_layout_02 .col-left .ubp_box_content li:first-child {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ruou;
+  width: 550px;
+  height: 185px;
+}
+.cgc_layout_02 .col-left .ubp_box_content li:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: qua2;
+  width: 170px;
+  height: 250px;
+}
+.cgc_layout_02 .col-left .ubp_box_content li:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: qua3;
+  width: 170px;
+  height: 250px;
+}
+.cgc_layout_02 .col-left .ubp_box_content li:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: qua4;
+  width: 170px;
+  height: 250px;
+}
+
+.cgc_layout_03 {
+  color: #333;
+}
+.cgc_layout_03 .col-left .ubp_box_content {
+  height: 469px;
+  background-image: url("../images/hop_03.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: -10px -2px;
+}
+.cgc_layout_03 .col-left .ubp_box_content ul {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "qua1 qua2 qua3" "ruou ruou ruou";
+  padding: 67px 73px 7px 46px;
+}
+.cgc_layout_03 .col-left .ubp_box_content li:nth-child(1) {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: qua1;
+  width: 145px;
+  height: 250px;
+}
+.cgc_layout_03 .col-left .ubp_box_content li:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: qua2;
+  width: 145px;
+  height: 250px;
+}
+.cgc_layout_03 .col-left .ubp_box_content li:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: qua3;
+  width: 145px;
+  height: 250px;
+}
+.cgc_layout_03 .col-left .ubp_box_content li:last-child {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ruou;
+  width: 455px;
+  height: 125px;
+}
+
+.cgc_layout_04 {
+  color: #333;
+}
+.cgc_layout_04 .col-left .ubp_box_content {
+  height: 469px;
+  background-image: url("../images/hop_02.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 0 0;
+}
+.cgc_layout_04 .col-left .ubp_box_content ul {
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: "ruou ruou ruou" "qua2 qua3 qua4";
+  padding: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+}
+.cgc_layout_04 .col-left .ubp_box_content li:first-child {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 3;
+  grid-area: ruou;
+  width: 465px;
+  height: 180px;
+}
+.cgc_layout_04 .col-left .ubp_box_content li:nth-child(2) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 1;
+  grid-area: qua2;
+  width: 148px;
+  height: 268px;
+}
+.cgc_layout_04 .col-left .ubp_box_content li:nth-child(3) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: qua3;
+  width: 148px;
+  height: 268px;
+}
+.cgc_layout_04 .col-left .ubp_box_content li:nth-child(4) {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: qua4;
+  width: 148px;
+  height: 268px;
+}
