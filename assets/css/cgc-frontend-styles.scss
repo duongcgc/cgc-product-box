@@ -1,12 +1,29 @@
 .col-left {
     .ubp_box_content {
-        overflow: auto;
+        overflow: hidden;
         li {
             background: transparent;
             border: solid 1px rgba($color: #ffffff, $alpha: 0.5);
         }
     }
 }
+
+#page_content_wrapper {
+    .inner {
+        .sidebar_content {
+            .cgc_layout_01,  
+            .cgc_layout_02,
+            .cgc_layout_03,
+            .cgc_layout_04 {
+                img {
+                    width: 100%;
+                    height: 100% !important;
+                }
+            }
+        }
+    }
+}
+
 
 // Layout left 1 - top big - bottom 3
 .cgc_layout_01 {
@@ -19,11 +36,13 @@
             }
         }
         .ubp_box_content {
-            height: 469px;
+            height: 100%;
+            width: 100%;
             background-image: url("../images/layout-1.png");
             background-repeat: no-repeat;
-            background-size: contain;
-            background-position: 3px 0px;
+            background-size: cover;
+            background-position: center center;
+            margin-bottom: 30px;
 
             li {
                 &::before {
@@ -54,32 +73,32 @@
 .cgc_layout_02 {
     .col-left {
         .ubp_box_content {
-            height: 469px;
+            width: 100%;
+            height: 100%;
             background-image: url("../images/layout-2.png");
             background-repeat: no-repeat;
             background-size: contain;
-            background-position: -10px -2px;
+            background-position: -10px -5px;
+            margin-bottom: 30px;
 
             ul {
-                display: grid;
-                grid-template-areas:
-                    "ruou ruou ruou"
-                    "qua2 qua3 qua4";
+                margin: 0 !important;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
             }
 
-            li:first-child {
-                grid-area: ruou;
-                width: 550px;
-                height: 185px;
+            li:first-child {                
+                width: 100%;
+                height: 150px;
             }
-            li{
+            li {
                 @for $i from 2 through 4 {
-                    &:nth-child(#{$i}) {                        
-                        grid-area: qua#{$i};
-                        width: 170px;
-                        height: 250px;
+                    &:nth-child(#{$i}) {                       
+                        width: 30%;
+                        height: 200px;
                     }
-                }                
+                }
             }
         }
     }
@@ -90,36 +109,36 @@
 .cgc_layout_03 {
     .col-left {
         .ubp_box_content {
-            height: 469px;
+            box-sizing: border-box;
+            height: 100%;
+            width: 100%;
             background-image: url("../images/hop_03.jpg");
             background-repeat: no-repeat;
             background-size: contain;
-            background-position: -10px -2px;
+            background-position: 0 0;
+            margin-bottom: 30px;
 
             ul {
-                display: grid;
-                grid-template-areas:                    
-                    "qua1 qua2 qua3"
-                    "ruou ruou ruou";
-                padding: 67px 73px 7px 46px;
+                margin: 0 !important;
+                display: flex;
+                flex-wrap: wrap;
+                padding-top: 55px;
+                padding-left: 50px;
             }
 
-            li{
+            li {
                 @for $i from 1 through 3 {
-                    &:nth-child(#{$i}) {                        
-                        grid-area: qua#{$i};
-                        width: 145px;
-                        height: 250px;
+                    &:nth-child(#{$i}) {
+                        width: 23%;
+                        height: 190px;
                     }
                 }
-
             }
 
             li:last-child {
-                grid-area: ruou;
-                width: 455px;
-                height: 125px;
-
+                // grid-area: ruou;
+                width: 73%;
+                height: 100px;
             }
         }
     }
@@ -130,33 +149,33 @@
 .cgc_layout_04 {
     .col-left {
         .ubp_box_content {
-            height: 469px;
+            height: 100%;
+            width: 100%;
             background-image: url("../images/hop_02.png");
             background-repeat: no-repeat;
             background-size: contain;
             background-position: 0 0;
+            margin-bottom: 30px;
+            padding-top: 5px;;
+            padding-left: 5px;
 
             ul {
-                display: grid;
-                grid-template-areas:                    
-                    "ruou ruou ruou"
-                    "qua2 qua3 qua4";
+                margin: 0 !important;
                 padding: 0;
-                justify-content: flex-start;
-
+                display: flex;
+                flex-wrap: wrap;               
+                justify-content: space-around;
             }
 
-            li:first-child {
-                grid-area: ruou;
-                width: 465px;
-                height: 180px;                
+            li:first-child {                
+                width: 100%;
+                height: 180px;
             }
 
-            li{
+            li {
                 @for $i from 2 through 4 {
                     &:nth-child(#{$i}) {                        
-                        grid-area: qua#{$i};
-                        width: 148px;
+                        width: 30.8%;
                         height: 268px;
                     }
                 }
