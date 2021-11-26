@@ -309,7 +309,7 @@ if (!class_exists('UBP_Box_Product_Frontend')) {
             $price_label = get_option('ubp_mix_match_box_price_label');
             $price_label = !empty($price_label) ? $price_label : esc_html__("Box Total: ", "wc-ubp");
             ?>
-            <p class="price ubp_bundle"> <?php echo esc_attr($price_label) . get_woocommerce_currency_symbol() . '<span class="bundle_price">' . esc_attr(floatval($price)) . '</span>'; ?></p>
+            <p class="price ubp_bundle"> <?php echo esc_attr($price_label) . '<span class="bundle_price">' . esc_attr(floatval($price)) . '</span>' . get_woocommerce_currency_symbol(); ?></p>
             <?php
             do_action('wc_ubp_box_product_after_price', $product->get_id());
 
