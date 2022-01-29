@@ -19,7 +19,7 @@ if (!class_exists('UBP_Box_Product_Frontend')) {
             } elseif ($value == 'below_layout') {
                 add_action('ubp_after_box_product_layout', array($this, 'ubp_print_short_description'));
             }
-            add_action('wp_head', array($this, 'add_styles'), 100);
+            add_action('wp_head', array($this, 'add_styles'), 100);            
             add_action('wp_footer', array($this, 'ubp_add_footer_data'));
 
             add_action('woocommerce_cart_updated', array($this, 'update_cart_action'), 10);
@@ -478,6 +478,79 @@ if (!class_exists('UBP_Box_Product_Frontend')) {
                 </style>
                 <?php
             }
+
+            // add custom background
+
+
+            // Layout 01
+            $value = get_option('ubp_mix_match_box_bg_image_01'); 
+			$value = empty($value) ? '' : $value; 
+            $bg_img_01 = '';
+
+            if( $image = wp_get_attachment_image_src( $value ) ) {
+                $bg_img_01 = $image[0];
+
+                ?>
+                <style type="text/css">
+                    .cgc_layout_01 .col-left .ubp_box_content {                       
+                        background-image: url(<?php echo $bg_img_01; ?>);
+                    }
+                </style>
+                <?php
+            } 
+
+            // Layout 02
+            $value = get_option('ubp_mix_match_box_bg_image_02'); 
+			$value = empty($value) ? '' : $value; 
+            $bg_img_02 = '';
+
+            if( $image = wp_get_attachment_image_src( $value ) ) {
+                $bg_img_02 = $image[0];
+
+                ?>
+                <style type="text/css">
+                    .cgc_layout_02 .col-left .ubp_box_content {                       
+                        background-image: url(<?php echo $bg_img_02; ?>);
+                    }
+                </style>
+                <?php
+            } 
+
+            // Layout 03
+            $value = get_option('ubp_mix_match_box_bg_image_03'); 
+			$value = empty($value) ? '' : $value; 
+            $bg_img_03 = '';
+
+            if( $image = wp_get_attachment_image_src( $value ) ) {
+                $bg_img_03 = $image[0];
+
+                ?>
+                <style type="text/css">
+                    .cgc_layout_03 .col-left .ubp_box_content {                       
+                        background-image: url(<?php echo $bg_img_03; ?>);
+                    }
+                </style>
+                <?php
+            } 
+
+            // Layout 04
+            $value = get_option('ubp_mix_match_box_bg_image_04'); 
+			$value = empty($value) ? '' : $value; 
+            $bg_img_04 = '';
+
+            if( $image = wp_get_attachment_image_src( $value ) ) {
+                $bg_img_04 = $image[0];
+
+                ?>
+                <style type="text/css">
+                    .cgc_layout_04 .col-left .ubp_box_content {                       
+                        background-image: url(<?php echo $bg_img_04; ?>);
+                    }
+                </style>
+                <?php
+            } 
+
+
         }
 
         public function ubp_add_footer_data()
