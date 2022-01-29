@@ -64,6 +64,13 @@
 			}
 			return parseInt(arr.length);
 		}
+		
+		function numberWithCommas(number) {
+			var parts = number.toString().split(".");
+			parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+			return parts.join(".");
+		}
+		
 		//may be added minimum
 		function ubp_box_maybe_added_min(){
 			var arr =[];
@@ -88,7 +95,8 @@
 					if(isFloat(current)){
 						current=current.toFixed(2);
 					}
-					jQuery('#ubp_cutom_box_product_layouts .price.ubp_bundle .bundle_price').html(current);
+					commaNum = numberWithCommas(current);
+					jQuery('#ubp_cutom_box_product_layouts .price.ubp_bundle .bundle_price').html(commaNum);
 				}
 			}
 		}
@@ -108,7 +116,8 @@
 					if(isFloat(current)){
 						current=current.toFixed(2);
 					}
-					jQuery('#ubp_cutom_box_product_layouts .price.ubp_bundle .bundle_price').html(current);
+					commaNum = numberWithCommas(current);
+					jQuery('#ubp_cutom_box_product_layouts .price.ubp_bundle .bundle_price').html(commaNum);
 				}
 			}
 		}

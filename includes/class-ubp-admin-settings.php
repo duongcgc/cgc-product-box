@@ -559,10 +559,19 @@ if (!class_exists('UBP_Woo_Admin_Settings')) {
                 wp_localize_script('ubp-admin', 'wooubp', array(
                     'ajaxurl' => admin_url('admin-ajax.php')
                 ));
+
                 // Css rules for Color Picker
                 wp_enqueue_style('wp-color-picker');
                 wp_enqueue_script('wp-color-picker');
                 wp_enqueue_script('ubp-admin');
+
+                // CGC Script
+                if ( ! did_action( 'wp_enqueue_media' ) ) {
+                    wp_enqueue_media();
+                }
+             
+                wp_enqueue_script( 'cgcuploadscript', WOO_UBP_URL . '/assets/js/cgc-script.js', array( 'jquery' ) );
+
             }
         }
     }

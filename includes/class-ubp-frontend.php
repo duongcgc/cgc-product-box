@@ -279,8 +279,13 @@ if (!class_exists('UBP_Box_Product_Frontend')) {
         {
             global $product;
             $price = 0;
+
             if (get_post_meta($product->get_id(), 'ubp_pricing_type', true) !== 'per_product_only') {
-                $price += $product->get_price();
+                if ($product->get_price() == '') {
+                    $price = 0;
+                } else {
+                    $price += $product->get_price();
+                };
             }
             // Prefilled
             $max = get_post_meta($product_id, 'ubp_box_max_products', true);
@@ -308,8 +313,19 @@ if (!class_exists('UBP_Box_Product_Frontend')) {
             }
             $price_label = get_option('ubp_mix_match_box_price_label');
             $price_label = !empty($price_label) ? $price_label : esc_html__("Box Total: ", "wc-ubp");
+			
+			// esc_attr(floatval($price))
+
+            if ($product->get_price() == '') {
+                $display_price = array( 'price' => 0 );
+            } else {
+                $display_price = array( 'price' => $product->get_price() * 1.04 ) ;
+            }
+
             ?>
-            <p class="price ubp_bundle"> <?php echo esc_attr($price_label) . '<span class="bundle_price">' . esc_attr(floatval($price)) . '</span>' . get_woocommerce_currency_symbol(); ?></p>
+
+            <p class="price ubp_bundle"> <?php echo esc_attr($price_label) . '<span class="bundle_price">' . wc_price( wc_get_price_to_display( $product, $display_price ) ) . '</span>' . get_woocommerce_currency_symbol(); ?></p>
+            
             <?php
             do_action('wc_ubp_box_product_after_price', $product->get_id());
 

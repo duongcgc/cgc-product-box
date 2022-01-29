@@ -22,6 +22,10 @@ if(!class_exists('UBP_Ultimate_Box_Main_Settings')){
 			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_bg_color'); 
 			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_border_color');
 			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_max_posts_per_page');
+			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_bg_image_01');
+			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_bg_image_02');
+			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_bg_image_03');
+			register_setting('ubp_mix_match_box_settings', 'ubp_mix_match_box_bg_image_04');
 		}
 		public function menu_page_callback(){
 			?>
@@ -75,6 +79,106 @@ if(!class_exists('UBP_Ultimate_Box_Main_Settings')){
 							<td><?php $value=get_option('ubp_mix_match_box_border_color'); 
 									  $value=empty($value) ? '#8224e3' : $value; ?>
 								<p><input type="text" name="ubp_mix_match_box_border_color" id="ubp_mix_match_box_border_color" value="<?php echo esc_attr($value); ?>"><p>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="ubp_mix_match_box_bg_image_01"><?php esc_html_e('Ảnh hộp quà 01','wc-ubp'); ?></label></th>
+							<td>
+								<?php
+
+									$value=get_option('ubp_mix_match_box_bg_image_01'); 
+									$value=empty($value) ? '' : $value; 
+
+									if( $image = wp_get_attachment_image_src( $value ) ) {
+
+										echo '<a href="#" class="misha-upl"><img src="' . $image[0] . '" /></a><br/>
+											<a href="#" class="misha-rmv">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_01" value="' . esc_attr($value) . '">';
+
+									} else {
+
+										echo '<a href="#" class="misha-upl">Upload image</a>
+											<a href="#" class="misha-rmv" style="display:none">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_01" value="' . esc_attr($value) . '">';
+
+									} 
+
+								?>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="ubp_mix_match_box_bg_image_02"><?php esc_html_e('Ảnh hộp quà 02','wc-ubp'); ?></label></th>
+							<td>
+								<?php
+
+									$value=get_option('ubp_mix_match_box_bg_image_02'); 
+									$value=empty($value) ? '' : $value; 
+
+									if( $image = wp_get_attachment_image_src( $value ) ) {
+
+										echo '<a href="#" class="misha-upl"><img src="' . $image[0] . '" /></a><br/>
+											<a href="#" class="misha-rmv">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_02" value="' . esc_attr($value) . '">';
+
+									} else {
+
+										echo '<a href="#" class="misha-upl">Upload image</a>
+											<a href="#" class="misha-rmv" style="display:none">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_02" value="' . esc_attr($value) . '">';
+
+									} 
+
+								?>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="ubp_mix_match_box_bg_image_03"><?php esc_html_e('Ảnh hộp quà 03','wc-ubp'); ?></label></th>
+							<td>
+								<?php
+
+									$value=get_option('ubp_mix_match_box_bg_image_03'); 
+									$value=empty($value) ? '' : $value; 
+
+									if( $image = wp_get_attachment_image_src( $value ) ) {
+
+										echo '<a href="#" class="misha-upl"><img src="' . $image[0] . '" /></a><br/>
+											<a href="#" class="misha-rmv">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_03" value="' . esc_attr($value) . '">';
+
+									} else {
+
+										echo '<a href="#" class="misha-upl">Upload image</a>
+											<a href="#" class="misha-rmv" style="display:none">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_03" value="' . esc_attr($value) . '">';
+
+									} 
+
+								?>
+							</td>
+						</tr>
+						<tr>
+							<th><label for="ubp_mix_match_box_bg_image_04"><?php esc_html_e('Ảnh hộp quà 04','wc-ubp'); ?></label></th>
+							<td>
+								<?php
+
+									$value=get_option('ubp_mix_match_box_bg_image_04'); 
+									$value=empty($value) ? '' : $value; 
+
+									if( $image = wp_get_attachment_image_src( $value ) ) {
+
+										echo '<a href="#" class="misha-upl"><img src="' . $image[0] . '" /></a><br/>
+											<a href="#" class="misha-rmv">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_04" value="' . esc_attr($value) . '">';
+
+									} else {
+
+										echo '<a href="#" class="misha-upl">Upload image</a>
+											<a href="#" class="misha-rmv" style="display:none">Remove image</a>
+											<input type="hidden" name="ubp_mix_match_box_bg_image_04" value="' . esc_attr($value) . '">';
+
+									} 
+
+								?>
 							</td>
 						</tr>
 					</table>
